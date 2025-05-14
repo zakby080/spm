@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - Zakaria Mmaka Moh'd</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --purple: #9b59b6;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--dark);
+        }
+        
+        .profile-card {
+            width: 90%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+        }
+        
+        .photo-section {
+            background: linear-gradient(to bottom right, var(--primary), var(--purple));
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+        
+        .photo-container {
+            width: 220px;
+            height: 280px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 3px dashed rgba(255, 255, 255, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-icon {
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.7);
+            display: none; /* Hidden when image is shown */
+        }
+        
+        .upload-btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .upload-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .info-section {
+            padding: 40px;
+        }
+        
+        .profile-header {
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+            color: var(--secondary);
+        }
+        
+        .student-id {
+            font-size: 16px;
+            color: var(--primary);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        .reg-number {
+            font-size: 16px;
+            color: var(--purple);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+        }
+        
+        .info-label {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .university {
+            color: var(--accent);
+        }
+        
+        .program {
+            color: var(--success);
+        }
+        
+        .location {
+            color: var(--purple);
+        }
+        
+        .contact-value a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-section {
+                padding: 30px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="profile-card">
+        <div class="photo-section">
+            <div class="photo-container">
+                <img id="preview-image" src="picture/PXL_20250425_121530706.PORTRAIT.jpg" alt="Profile Photo">
+                
+            </div>
+           
+            <input type="file" id="file-upload" accept="image/*" style="display: none;">
+        </div>
+        
+        <div class="info-section">
+            <div class="profile-header">
+                <h1 class="profile-name">ZAKARIA MMAKA MOH'D</h1>
+                <div class="reg-number">DCS/27012/2301/DT</div>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Company</div>
+                    <div class="info-value university">ZAKBY GROUP</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Position</div>
+                    <div class="info-value">CEO</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Phone Number</div>
+                    <div class="info-value contact-value">+255 794 201 466</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Email</div>
+                    <div class="info-value contact-value">
+                        <a href="mailto:Zakariammaka1@gmail.com">Zakariammaka1@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Location</div>
+                    <div class="info-value location">Masaki, Dar es Salaam</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Image upload functionality
+        const fileUpload = document.getElementById('file-upload');
+        const uploadBtn = document.getElementById('upload-btn');
+        const previewImage = document.getElementById('preview-image');
+        const photoIcon = document.getElementById('photo-icon');
+        
+        // Show file dialog when button is clicked
+        uploadBtn.addEventListener('click', () => fileUpload.click());
+        
+        // Handle image selection
+        fileUpload.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    photoIcon.style.display = 'none';
+                }
+                
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Check if image loads successfully
+        previewImage.onload = function() {
+            photoIcon.style.display = 'none';
+        };
+        
+        // If image fails to load, show the icon
+        previewImage.onerror = function() {
+            photoIcon.style.display = 'block';
+            previewImage.style.display = 'none';
+        };
+    </script>
+</body>
+</html>
